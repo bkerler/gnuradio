@@ -22,6 +22,7 @@ void bind_agc2_ff(py::module&);
 void bind_agc3_cc(py::module&);
 void bind_agc_cc(py::module&);
 void bind_agc_ff(py::module&);
+void bind_basis_change(py::module& m);
 void bind_cpfsk_bc(py::module&);
 void bind_cpm(py::module&);
 void bind_ctcss_squelch_ff(py::module&);
@@ -76,6 +77,7 @@ PYBIND11_MODULE(analog_python, m)
     bind_agc3_cc(m);
     bind_agc_cc(m);
     bind_agc_ff(m);
+    bind_basis_change(m);
     bind_cpfsk_bc(m);
     bind_cpm(m);
     bind_dpll_bb(m);

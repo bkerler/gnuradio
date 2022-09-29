@@ -13,6 +13,7 @@ install(FILES
     cpm.h
     agc.h
     agc2.h
+    basis_change.h
     noise_type.h
     squelch_base_ff.h
     squelch_base_cc.h
