@@ -47,7 +47,7 @@ PROJECT_BRIEF          = "The Free & Open Software Radio Ecosystem"
 # exceed 55 pixels and the maximum width should not exceed 200 pixels.
 # Doxygen will copy the logo to the output directory.
 
-PROJECT_LOGO           = @CMAKE_SOURCE_DIR@/docs/doxygen/gnuradio_logo_icon.png
+PROJECT_LOGO           = @PROJECT_SOURCE_DIR@/docs/doxygen/gnuradio_logo_icon.png
 
 # The OUTPUT_DIRECTORY tag is used to specify the (relative or absolute)
 # base path where the generated documentation will be put.
@@ -141,42 +141,50 @@ STRIP_FROM_PATH        =
 # definition is used. Otherwise one should specify the include paths that
 # are normally passed to the compiler using the -I flag.
 
-STRIP_FROM_INC_PATH    = @CMAKE_SOURCE_DIR@/gnuradio-runtime/include \
-                         @CMAKE_BINARY_DIR@/gnuradio-runtime/include \
-                         @CMAKE_SOURCE_DIR@/gr-analog/include \
-                         @CMAKE_BINARY_DIR@/gr-analog/include \
-                         @CMAKE_SOURCE_DIR@/gr-audio/include \
-                         @CMAKE_BINARY_DIR@/gr-audio/include \
-                         @CMAKE_SOURCE_DIR@/gr-blocks/include \
-                         @CMAKE_BINARY_DIR@/gr-blocks/include \
-                         @CMAKE_SOURCE_DIR@/gr-channels/include \
-                         @CMAKE_BINARY_DIR@/gr-channels/include \
-                         @CMAKE_SOURCE_DIR@/gr-digital/include \
-                         @CMAKE_BINARY_DIR@/gr-digital/include \
-                         @CMAKE_SOURCE_DIR@/gr-dtv/include \
-                         @CMAKE_BINARY_DIR@/gr-dtv/include \
-                         @CMAKE_SOURCE_DIR@/gr-fec/include \
-                         @CMAKE_BINARY_DIR@/gr-fec/include \
-                         @CMAKE_SOURCE_DIR@/gr-fft/include \
-                         @CMAKE_BINARY_DIR@/gr-fft/include \
-                         @CMAKE_SOURCE_DIR@/gr-filter/include \
-                         @CMAKE_BINARY_DIR@/gr-filter/include \
-                         @CMAKE_SOURCE_DIR@/gr-pdu/include \
-                         @CMAKE_BINARY_DIR@/gr-pdu/include \
-                         @CMAKE_SOURCE_DIR@/gr-qtgui/include \
-                         @CMAKE_BINARY_DIR@/gr-qtgui/include \
-                         @CMAKE_SOURCE_DIR@/gr-trellis/include \
-                         @CMAKE_BINARY_DIR@/gr-trellis/include \
-                         @CMAKE_SOURCE_DIR@/gr-uhd/include \
-                         @CMAKE_BINARY_DIR@/gr-uhd/include \
-                         @CMAKE_SOURCE_DIR@/gr-video-sdl/include \
-                         @CMAKE_BINARY_DIR@/gr-video-sdl/include \
-                         @CMAKE_SOURCE_DIR@/gr-vocoder/include \
-                         @CMAKE_BINARY_DIR@/gr-vocoder/include \
-                         @CMAKE_SOURCE_DIR@/gr-wavelet/include \
-                         @CMAKE_BINARY_DIR@/gr-wavelet/include \
-                         @CMAKE_SOURCE_DIR@/gr-zeromq/include \
-                         @CMAKE_BINARY_DIR@/gr-zeromq/include
+STRIP_FROM_INC_PATH    = @PROJECT_SOURCE_DIR@/gnuradio-runtime/include \
+                         @PROJECT_BINARY_DIR@/gnuradio-runtime/include \
+                         @PROJECT_SOURCE_DIR@/gr-analog/include \
+                         @PROJECT_BINARY_DIR@/gr-analog/include \
+                         @PROJECT_SOURCE_DIR@/gr-audio/include \
+                         @PROJECT_BINARY_DIR@/gr-audio/include \
+                         @PROJECT_SOURCE_DIR@/gr-blocks/include \
+                         @PROJECT_BINARY_DIR@/gr-blocks/include \
+                         @PROJECT_SOURCE_DIR@/gr-channels/include \
+                         @PROJECT_BINARY_DIR@/gr-channels/include \
+                         @PROJECT_SOURCE_DIR@/gr-digital/include \
+                         @PROJECT_BINARY_DIR@/gr-digital/include \
+                         @PROJECT_SOURCE_DIR@/gr-dtv/include \
+                         @PROJECT_BINARY_DIR@/gr-dtv/include \
+                         @PROJECT_SOURCE_DIR@/gr-fec/include \
+                         @PROJECT_BINARY_DIR@/gr-fec/include \
+                         @PROJECT_SOURCE_DIR@/gr-fft/include \
+                         @PROJECT_BINARY_DIR@/gr-fft/include \
+                         @PROJECT_SOURCE_DIR@/gr-filter/include \
+                         @PROJECT_BINARY_DIR@/gr-filter/include \
+                         @PROJECT_SOURCE_DIR@/gr-iio/include \
+                         @PROJECT_BINARY_DIR@/gr-iio/include \
+                         @PROJECT_SOURCE_DIR@/gr-network/include \
+                         @PROJECT_BINARY_DIR@/gr-network/include \
+                         @PROJECT_SOURCE_DIR@/gr-pdu/include \
+                         @PROJECT_BINARY_DIR@/gr-pdu/include \
+                         @PROJECT_SOURCE_DIR@/gr-qtgui/include \
+                         @PROJECT_BINARY_DIR@/gr-qtgui/include \
+                         @PROJECT_SOURCE_DIR@/gr-soapy/include \
+                         @PROJECT_BINARY_DIR@/gr-soapy/include \
+                         @PROJECT_SOURCE_DIR@/gr-trellis/include \
+                         @PROJECT_BINARY_DIR@/gr-trellis/include \
+                         @PROJECT_SOURCE_DIR@/gr-uhd/include \
+                         @PROJECT_BINARY_DIR@/gr-uhd/include \
+                         @PROJECT_SOURCE_DIR@/gr-utils/include \
+                         @PROJECT_BINARY_DIR@/gr-utils/include \
+                         @PROJECT_SOURCE_DIR@/gr-video-sdl/include \
+                         @PROJECT_BINARY_DIR@/gr-video-sdl/include \
+                         @PROJECT_SOURCE_DIR@/gr-vocoder/include \
+                         @PROJECT_BINARY_DIR@/gr-vocoder/include \
+                         @PROJECT_SOURCE_DIR@/gr-wavelet/include \
+                         @PROJECT_BINARY_DIR@/gr-wavelet/include \
+                         @PROJECT_SOURCE_DIR@/gr-zeromq/include \
+                         @PROJECT_BINARY_DIR@/gr-zeromq/include
 
 # If the SHORT_NAMES tag is set to YES, doxygen will generate much shorter
 # (but less readable) file names. This can be useful if your file system
@@ -764,10 +772,20 @@ EXCLUDE                = @abs_top_builddir@/cmake/msvc \
                          @abs_top_builddir@/gr-filter/lib \
                          @abs_top_srcdir@/gr-fft/lib \
                          @abs_top_builddir@/gr-fft/lib \
+                         @abs_top_srcdir@/gr-iio/lib \
+                         @abs_top_builddir@/gr-iio/lib \
+                         @abs_top_srcdir@/gr-network/lib \
+                         @abs_top_builddir@/gr-network/lib \
                          @abs_top_srcdir@/gr-pdu/lib \
                          @abs_top_builddir@/gr-pdu/lib \
                          @abs_top_srcdir@/gr-qtgui/lib \
                          @abs_top_builddir@/gr-qtgui/lib \
+                         @abs_top_srcdir@/gr-qtgui/examples \
+                         @abs_top_builddir@/gr-qtgui/examples \
+                         @abs_top_srcdir@/gr-soapy/lib \
+                         @abs_top_builddir@/gr-soapy/lib \
+                         @abs_top_srcdir@/gr-soapy/python \
+                         @abs_top_builddir@/gr-soapy/python \
                          @abs_top_srcdir@/gr-trellis/lib \
                          @abs_top_builddir@/gr-trellis/lib \
                          @abs_top_srcdir@/gr-uhd/lib \
